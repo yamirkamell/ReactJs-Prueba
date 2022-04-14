@@ -13,7 +13,10 @@ const ContainerRoot = styled.div`
   height: 100vh;
 `;
 const ContainerLeft = styled.div`
-  flex: ${window.innerWidth >= 475 ? 1.5 : 0};
+  flex:  1.5;
+  @media (max-width: 475px) {
+    flex: 0;
+  }
   
 `;
 const ImageLeft = styled.img`

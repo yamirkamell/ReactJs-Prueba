@@ -5,11 +5,14 @@ const ContainerComponent = styled.div`
 `;
 
 const Button = styled.button`
-  width: ${window.innerWidth >= 475 ? '20vw' : '70vw'};
+  width: 20vw;
   height: 50px;
   border-width: 0px;
   background-color: #F9C444;
   border-radius: 5px;  
+  @media (max-width: 475px) {
+    width: 70vw;
+  }
 `;
 
 export {
