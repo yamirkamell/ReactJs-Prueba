@@ -2,12 +2,12 @@ import React from 'react';
 import { ContainerComponent, Input, Icon } from './styled';
 
 const InputComponent = (props) => {
-
+  const { placeholder, type, img, name, setName } = props;
 
   return (
     <ContainerComponent>
-      <Input placeholder={props.placeholder} type={props.type} />
-      <Icon src={props.img} />
+      <Input placeholder={placeholder} type={type} value={name} onChange={event => setName(event.target.value)} />
+      <Icon src={img} />
     </ContainerComponent>
   )
 };

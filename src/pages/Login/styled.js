@@ -49,6 +49,9 @@ const ContainerInput = styled.div`
   margin-top: 15px;
   
 `;
+const ErrorText = styled.h5`
+  color: red;  
+`;
 
 
 export {
@@ -58,6 +61,7 @@ export {
   ContainerRight,
   BestPizzaIcon,
   ContainerBody,
-  ContainerInput
+  ContainerInput,
+  ErrorText
   
 };
