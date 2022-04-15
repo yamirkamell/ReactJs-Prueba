@@ -13,6 +13,10 @@ const Button = styled.button`
   @media (max-width: 475px) {
     width: 70vw;
   }
+  &:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    }
 `;
 
 export {
