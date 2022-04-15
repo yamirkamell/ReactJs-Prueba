@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import backgroundLogin from './../../assets/imagebkg.png';
 import { AiFillFacebook, AiOutlineInstagram } from "react-icons/ai";
+import { BiSearchAlt } from "react-icons/bi";
+
 
 
 const ContainerRoot = styled.div`
@@ -75,6 +77,23 @@ const ContainerBody = styled.div`
 const ContainerStore = styled.div`
   margin: 0 5%;
 `;
+const ContainerSearch = styled.div`
+  display: flex; 
+  flex-direction: row; 
+  justify-content: flex-end; 
+  align-items: center; 
+  margin: 2% 10%; 
+`;
+const InputComponent = styled.input`
+  width: 250px;
+  height: 30px;
+  border-radius: 20px;
+  border-width: 0.2px;
+  border-color: #f6c243;
+`;
+const SearchIcon = styled(BiSearchAlt)`
+  margin-left: -25px;
+`;
 const ContainerStoreCard = styled.div`
   display: flex; 
   flex-wrap: wrap; 
@@ -136,6 +155,9 @@ export {
   ContainerHeader,
   ContainerLogOut,
   ContainerStore,
+  ContainerSearch,
+  InputComponent,
+  SearchIcon,
   ContainerStoreCard,
   ContainerFooter,
   ContainerSocialsNetworks,

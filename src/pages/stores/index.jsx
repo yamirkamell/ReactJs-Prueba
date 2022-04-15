@@ -11,6 +11,9 @@ import {
   ContainerLogOut,
   ContainerBody,
   ContainerStore,
+  ContainerSearch,
+  InputComponent,
+  SearchIcon,
   ContainerStoreCard,
   ContainerFooter,
   ContainerSocialsNetworks,
@@ -28,19 +31,41 @@ import StoreComponent from './components/StoreComponent';
 const Stores = () => {
   const navigate = useNavigate();
   const [storesInfo, setStoresInfo] = useState([]);
+  const [tableStores, setTableStores] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
-    const GetStores = async () => {
-      await axios.get('https://pruebas-muy-candidatos.s3.us-east-2.amazonaws.com/RH.json')
-        .then(data => {
-          setStoresInfo(data.data.response.stores);
-        })
-        .catch(error => {
-          console.log(error);
-        })
-    }
     GetStores();
   }, []);
+
+  const GetStores = async () => {
+    await axios.get('https://pruebas-muy-candidatos.s3.us-east-2.amazonaws.com/RH.json')
+      .then(data => {
+        setStoresInfo(data.data.response.stores);
+        setTableStores(data.data.response.stores);
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+    filterItem(e.target.value);
+  }
+
+  const filterItem = (itemSearch) => {
+    const resultSearch = tableStores.filter((item) => {
+      if (item.name.toString().toLowerCase().includes(itemSearch.toLowerCase())) {
+        return item;
+      }
+      else {
+        return false;
+      }
+    });
+    setStoresInfo(resultSearch);
+
+  }
 
   return (
     <ContainerRoot>
@@ -57,6 +82,14 @@ const Stores = () => {
         </ContainerHeader>
         <ContainerBody>
           <ContainerStore>
+            <ContainerSearch>
+              <InputComponent
+                value={search}
+                placeholder="Búsqueda por nombre de la tienda"
+                onChange={handleChange}
+              />
+              <SearchIcon />
+            </ContainerSearch>
             <span> Pizzerías</span>
             <hr align='left' style={{ width: 65, borderTop: '1px solid #f6c243', marginTop: -1 }} />
             <div>
