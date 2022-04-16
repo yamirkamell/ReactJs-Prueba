@@ -20,11 +20,10 @@ const Login = () => {
   const LogIn = async () => {
     await axios.get('https://pruebas-muy-candidatos.s3.us-east-2.amazonaws.com/RH.json')
       .then(data => {
-        console.log(data);
         data.data.response.users.forEach(user => {
           if (user.email === username && user.password === password) {
-            console.log("login exitoso!!");
-            return navigate('/hola');
+            return navigate('/stores');
+
           }
           else {
             setErrorAlert(true);
