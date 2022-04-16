@@ -23,6 +23,7 @@ const Login = () => {
         data.data.response.users.forEach(user => {
           if (user.email === username && user.password === password) {
             return navigate('/stores');
+
           }
           else {
             setErrorAlert(true);

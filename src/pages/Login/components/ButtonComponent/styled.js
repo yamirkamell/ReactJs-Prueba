@@ -17,6 +17,7 @@ const Button = styled.button`
     opacity: 0.5;
     cursor: pointer;
     }
+
 `;
 
 export {
