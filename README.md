@@ -21,6 +21,7 @@ Los usuarios de acceso son\
 El usuario de ingreso es el Email.\
 
 El motivo de uso de styled-components, es para incrementar mi conocimiento a la hora\
-de trabajar con CSS dinámico.
+de trabajar con CSS dinámico.\
+Ya que ya dominó mucho mejor sass y less.
 
 
